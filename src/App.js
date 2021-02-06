@@ -11,7 +11,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Listing Carousel Test by 99.co</h2>
         </div>
-        <ListingCarousel />
+        <div className="p-4">
+          <div className="header-container">
+            <h1 style={{ color: `rgb(27,34,88)` }}>Listing with videos</h1>
+            <h4 style={{ color: `rgb(32,107,255)` }}>See all</h4>
+          </div>
+          
+
+          <ListingCarousel />
+        </div>
       </div>
     );
   }

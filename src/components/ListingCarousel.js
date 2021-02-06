@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import ListingItem from "./ListingItem";
 import { fetchData } from "../actions/listings";
-
+import styles from './style.module.css';
 function mapStateToProps(state) {
   return {
     listings: state.listings.listings,
@@ -21,7 +21,7 @@ function mapDispatchToProps(dispatch) {
 
 class ListingCarousel extends Component {
   static propTypes = {
-    listings: PropTypes.object,
+    listings: PropTypes.array,
     firstRender: PropTypes.bool,
   };
 
@@ -70,7 +70,7 @@ class ListingCarousel extends Component {
     }
 
     if (!listings) return null;
-    console.log("LISTINGS", listings);
+    //console.log("LISTINGS", listings);
 
     const items = listings.map((listing, index) => {
       return (
@@ -82,7 +82,7 @@ class ListingCarousel extends Component {
       );
     });
 
-    return <div>{items}</div>;
+    return (<div className={styles["listing-container"]}>{items}</div>);
   }
 }
 
